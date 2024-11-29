@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+
+    <style>
+        body{
+            background-color: #29293d;
+
+        }
+
+        .container{
+            margin: 20px auto;
+            width: 300px;
+            background-color: #8585ad;
+            padding: 20px;
+            border-radius: 10px;
+
+        }
+
+        #bulb{
+            width: 80%;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .app-heading{
+            color: #fff;
+            text-align: center;
+        }
+
+        .btn{
+            border: none;
+            padding: 5px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-group{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn-on{
+            background-color: #ffcc00;
+        }
+
+        .btn-off{
+            background-color: #4d4d4d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="container" id="container">
+        <h1 class="app-heading" id="app-heading">Bulb Toggler</h1>
+
+        <img src="lightbulb (1).png" alt="bulb" id="bulb">
+
+        <div class="btn-group">
+            <button class="btn btn-off" onclick="off()">Turn Off</button>
+            <button class="btn btn-on" onclick="on()">Turn On</button>
+        </div>
+    </div>
+
+    <script>
+        function on(){
+            const bulbImgElement = document.getElementById('bulb');
+            bulbImgElement.src = 'lightbulb.png';
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.style.backgroundColor = '#ffb31a';
+
+            const containerElement = document.getElementById('container');
+            containerElement.style.backgroundColor = '#fff';
+
+            const appheadingElement = document.getElementById('app-heading');
+            appheadingElement.style.color = '#000';
+
+        }
+
+        function off(){
+            const bulbImgElement = document.getElementById('bulb');
+            bulbImgElement.src = 'lightbulb (1).png';
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.style.backgroundColor = '#29293d';
+
+            const containerElement = document.getElementById('container');
+            containerElement.style.backgroundColor = '#8585ad';
+
+            const appheadingElement = document.getElementById('app-heading');
+            appheadingElement.style.color = '#fff';
+        }
+
+        
+    </script>
+</body>
+</html>
